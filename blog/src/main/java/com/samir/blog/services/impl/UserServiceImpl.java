@@ -40,8 +40,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserDto> getAllUsers() {
+        System.out.println("Getting users.");
         List<User> users=userRepo.findAll();
-        List<UserDto> userDtos =users.stream().map(user -> UserToDto(user)).collect(Collectors.toList());
+        List<UserDto> userDtos = users.stream().map(user -> UserToDto(user)).collect(Collectors.toList());
         return userDtos;
     }
 
